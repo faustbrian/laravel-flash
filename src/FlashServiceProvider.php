@@ -4,22 +4,16 @@ declare(strict_types=1);
 
 namespace PreemStudio\Flash;
 
-use Spatie\LaravelPackageTools\Commands\InstallCommand;
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
+use PreemStudio\Jetpack\Package\AbstractServiceProvider;
+use PreemStudio\Jetpack\Package\Package;
 
-class FlashServiceProvider extends PackageServiceProvider
+class FlashServiceProvider extends AbstractServiceProvider
 {
     public function configurePackage(Package $package): void
     {
         $package
             ->name('laravel-flash')
             ->hasConfigFile('laravel-flash')
-            ->hasViews()
-            ->hasInstallCommand(function (InstallCommand $command) {
-                $command
-                    ->publishConfigFile()
-                    ->copyAndRegisterServiceProviderInApp();
-            });
+            ->hasViews();
     }
 }
