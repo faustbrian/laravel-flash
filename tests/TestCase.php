@@ -6,13 +6,17 @@ namespace Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
 use PreemStudio\Flash\Flash;
-use PreemStudio\Flash\FlashServiceProvider;
+use PreemStudio\Flash\ServiceProvider;
+use Spatie\LaravelData\LaravelDataServiceProvider;
 
 abstract class TestCase extends Orchestra
 {
     protected function getPackageProviders($app): array
     {
-        return [FlashServiceProvider::class];
+        return [
+            LaravelDataServiceProvider::class,
+            ServiceProvider::class,
+        ];
     }
 
     protected function getPackageAliases($app): array

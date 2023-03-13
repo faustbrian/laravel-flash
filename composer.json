@@ -64,7 +64,7 @@
                 "Flash": "PreemStudio\\Flash\\Facades\\Flash"
             },
             "providers": [
-                "PreemStudio\\Flash\\FlashServiceProvider"
+                "PreemStudio\\Flash\\ServiceProvider"
             ]
         }
     },

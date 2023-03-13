@@ -8,7 +8,7 @@ use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Traits\Macroable;
 
 /** @mixin \PreemStudio\Flash\Message */
-class Flash
+final class Flash
 {
     use Macroable;
 
@@ -67,6 +67,6 @@ class Flash
 
     public static function fromConfig()
     {
-        self::levels(config('laravel-flash.levels'));
+        self::levels(config('flash.levels'));
     }
 }

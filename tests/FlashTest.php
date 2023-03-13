@@ -30,14 +30,14 @@ test('it can set a flash message with a custom level', function () {
 test('it can set a flash message with a custom config', function () {
     $config = [
         'icon' => [
-            'name'       => 'heroicon-m-x-circle',
-            'class'      => 'h-5 w-5 text-red-400',
+            'name' => 'heroicon-m-x-circle',
+            'class' => 'h-5 w-5 text-red-400',
             'attributes' => [],
         ],
         'classes' => [
             'background' => 'bg-red-50',
-            'title'      => 'text-red-800',
-            'body'       => 'text-red-700',
+            'title' => 'text-red-800',
+            'body' => 'text-red-700',
         ],
     ];
 
@@ -55,14 +55,14 @@ test('it can set a flash message from configured levels', function () {
     expect('message')->toBe(flash()->message);
     expect([
         'icon' => [
-            'name'       => 'heroicon-m-x-circle',
-            'class'      => 'h-5 w-5 text-red-400',
+            'name' => 'heroicon-m-x-circle',
+            'class' => 'h-5 w-5 text-red-400',
             'attributes' => [],
         ],
         'classes' => [
             'background' => 'bg-red-50',
-            'title'      => 'text-red-800',
-            'body'       => 'text-red-700',
+            'title' => 'text-red-800',
+            'body' => 'text-red-700',
         ],
     ])->toEqual(flash()->config);
 });
@@ -78,15 +78,15 @@ test('the flash function is macroable', function () {
 });
 
 test('multiple methods can be added in one go', function () {
-    Flash::levels(config('laravel-flash.levels'));
+    Flash::levels(config('flash.levels'));
 
     flash()->warning('warning');
     expect('warning')->toBe(flash()->message);
-    expect(config('laravel-flash.levels.warning'))->toBe(flash()->config);
+    expect(config('flash.levels.warning'))->toBe(flash()->config);
 
     flash()->error('error');
     expect('error')->toBe(flash()->message);
-    expect(config('laravel-flash.levels.error'))->toBe(flash()->config);
+    expect(config('flash.levels.error'))->toBe(flash()->config);
 });
 
 test('it can get the flash level when the level is registered using the macro', function () {
@@ -100,7 +100,7 @@ test('it can get the flash level when the level is registered using the macro', 
 });
 
 test('it can get the flash level when levels are registering in one go', function () {
-    Flash::levels(config('laravel-flash.levels'));
+    Flash::levels(config('flash.levels'));
 
     flash()->error('error');
 

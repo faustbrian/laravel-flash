@@ -5,12 +5,6 @@ declare(strict_types=1);
 use PreemStudio\Flash\Flash;
 use PreemStudio\Flash\Message;
 
-/**
- * @param  string  $message
- * @param  string  $title
- * @param  string  $level
- * @param  array  $config
- */
 function flash(
     ?string $message = null,
     ?string $title = null,

@@ -6,7 +6,7 @@ namespace PreemStudio\Flash;
 
 use Illuminate\Support\Arr;
 
-class Message
+final class Message
 {
     public string $message;
 
@@ -19,9 +19,9 @@ class Message
     public function __construct(string $message, ?string $title = '', ?string $level = '', ?array $config = [])
     {
         $this->message = $message;
-        $this->title   = $title;
-        $this->level   = $level;
-        $this->config  = $config;
+        $this->title = $title;
+        $this->level = $level;
+        $this->config = $config;
     }
 
     public function icon(string $key): array|string
@@ -37,10 +37,10 @@ class Message
     public function toArray(): array
     {
         return [
-            'title'   => $this->title,
+            'title' => $this->title,
             'message' => $this->message,
-            'config'  => $this->config,
-            'level'   => $this->level,
+            'config' => $this->config,
+            'level' => $this->level,
         ];
     }
 }
