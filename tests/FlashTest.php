@@ -30,14 +30,14 @@ test('it can set a flash message with a custom level', function () {
 test('it can set a flash message with a custom config', function () {
     $config = [
         'icon' => [
-            'name' => 'heroicon-m-x-circle',
-            'class' => 'h-5 w-5 text-red-400',
+            'name'       => 'heroicon-m-x-circle',
+            'class'      => 'h-5 w-5 text-red-400',
             'attributes' => [],
         ],
         'classes' => [
             'background' => 'bg-red-50',
-            'title' => 'text-red-800',
-            'body' => 'text-red-700',
+            'title'      => 'text-red-800',
+            'body'       => 'text-red-700',
         ],
     ];
 
@@ -55,14 +55,14 @@ test('it can set a flash message from configured levels', function () {
     expect('message')->toBe(flash()->message);
     expect([
         'icon' => [
-            'name' => 'heroicon-m-x-circle',
-            'class' => 'h-5 w-5 text-red-400',
+            'name'       => 'heroicon-m-x-circle',
+            'class'      => 'h-5 w-5 text-red-400',
             'attributes' => [],
         ],
         'classes' => [
             'background' => 'bg-red-50',
-            'title' => 'text-red-800',
-            'body' => 'text-red-700',
+            'title'      => 'text-red-800',
+            'body'       => 'text-red-700',
         ],
     ])->toEqual(flash()->config);
 });
