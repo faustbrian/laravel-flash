@@ -9,7 +9,7 @@ function flash(
     ?string $message = null,
     ?string $title = null,
     ?string $level = null,
-    ?array $config = []
+    ?array $config = [],
 ): Flash {
     /** @var \PreemStudio\Flash\Flash $flash */
     $flash = app(Flash::class);

@@ -21,14 +21,14 @@ final class Flash
 
     public function __get(string $name)
     {
-        return $this->getMessage()->$name ?? null;
+        return $this->getMessage()->{$name} ?? null;
     }
 
     public function getMessage(): ?Message
     {
         $flashedMessageProperties = $this->session->get('laravel_flash_message');
 
-        if (! $flashedMessageProperties) {
+        if (!$flashedMessageProperties) {
             return null;
         }
 
@@ -36,16 +36,16 @@ final class Flash
             $flashedMessageProperties['message'],
             $flashedMessageProperties['title'],
             $flashedMessageProperties['level'],
-            $flashedMessageProperties['config']
+            $flashedMessageProperties['config'],
         );
     }
 
     public function flash(Message $message): void
     {
-        if ($message->level && static::hasMacro($message->level)) {
+        if ($message->level && self::hasMacro($message->level)) {
             $methodName = $message->level;
 
-            $this->$methodName($message->message);
+            $this->{$methodName}($message->message);
 
             return;
         }
@@ -65,7 +65,7 @@ final class Flash
         }
     }
 
-    public static function fromConfig()
+    public static function fromConfig(): void
     {
         self::levels(config('flash.levels'));
     }

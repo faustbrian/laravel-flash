@@ -9,6 +9,9 @@ use PreemStudio\Flash\Flash;
 use PreemStudio\Flash\ServiceProvider;
 use Spatie\LaravelData\LaravelDataServiceProvider;
 
+/**
+ * @internal
+ */
 abstract class TestCase extends Orchestra
 {
     protected function getPackageProviders($app): array
