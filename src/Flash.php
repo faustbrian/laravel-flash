@@ -24,6 +24,18 @@ final class Flash
         return $this->getMessage()->{$name} ?? null;
     }
 
+    public static function levels(array $methods): void
+    {
+        foreach ($methods as $level => $config) {
+            self::macro($level, fn (string $message, ?string $title = '') => $this->flashMessage(new Message($message, $title, $level, $config)));
+        }
+    }
+
+    public static function fromConfig(): void
+    {
+        self::levels(config('flash.levels'));
+    }
+
     public function getMessage(): ?Message
     {
         $flashedMessageProperties = $this->session->get('laravel_flash_message');
@@ -56,17 +68,5 @@ final class Flash
     public function flashMessage(Message $message): void
     {
         $this->session->flash('laravel_flash_message', $message->toArray());
-    }
-
-    public static function levels(array $methods): void
-    {
-        foreach ($methods as $level => $config) {
-            self::macro($level, fn (string $message, ?string $title = '') => $this->flashMessage(new Message($message, $title, $level, $config)));
-        }
-    }
-
-    public static function fromConfig(): void
-    {
-        self::levels(config('flash.levels'));
     }
 }
