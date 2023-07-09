@@ -4,20 +4,6 @@
     </a>
 </p>
 
-<p align="center">
-    <a href="https://github.com/faustbrian/laravel-flash/actions">
-        <img src="https://badge.sh/github/check-runs/BombenProdukt/laravel-flash" alt="Checks" />
-    </a>
-    <a href="https://packagist.org/packages/bombenprodukt/laravel-flash">
-        <img src="https://badge.sh/packagist/downloads/BombenProdukt/laravel-flash" alt="Downloads" />
-    </a>
-    <a href="https://packagist.org/packages/bombenprodukt/laravel-flash">
-        <img src="https://badge.sh/packagist/version/BombenProdukt/laravel-flash" alt="Version" />
-    </a>
-    <a href="https://packagist.org/packages/bombenprodukt/laravel-flash">
-        <img src="https://badge.sh/packagist/license/BombenProdukt/laravel-flash" alt="License" />
-    </a>
-</p>
 
 ## About Laravel Flash
 
