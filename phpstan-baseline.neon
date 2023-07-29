@@ -21,7 +21,22 @@ parameters:
 			path: src/Flash.php
 
 		-
+			message: "#^Dynamic call to static method Illuminate\\\\Session\\\\Store\\:\\:flash\\(\\)\\.$#"
+			count: 1
+			path: src/Flash.php
+
+		-
 			message: "#^Method BombenProdukt\\\\Flash\\\\Flash\\:\\:__get\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Flash.php
+
+		-
+			message: "#^Only booleans are allowed in &&, string\\|null given on the left side\\.$#"
+			count: 1
+			path: src/Flash.php
+
+		-
+			message: "#^Only booleans are allowed in a negated boolean, mixed given\\.$#"
 			count: 1
 			path: src/Flash.php
 
@@ -47,6 +62,16 @@ parameters:
 
 		-
 			message: "#^Parameter \\#4 \\$config of class BombenProdukt\\\\Flash\\\\Message constructor expects array\\|null, mixed given\\.$#"
+			count: 1
+			path: src/Flash.php
+
+		-
+			message: "#^Variable method call on \\$this\\(BombenProdukt\\\\Flash\\\\Flash\\)\\.$#"
+			count: 1
+			path: src/Flash.php
+
+		-
+			message: "#^Variable property access on BombenProdukt\\\\Flash\\\\Message\\.$#"
 			count: 1
 			path: src/Flash.php
 
