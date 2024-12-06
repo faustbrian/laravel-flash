@@ -1,0 +1,19 @@
+{
+    "symbol-whitelist": [
+        "array",
+        "bool",
+        "false",
+        "int",
+        "null",
+        "self",
+        "string",
+        "true",
+        "app",
+        "blank",
+        "config",
+        "Illuminate\\Contracts\\Session\\Session",
+        "Illuminate\\Support\\Arr",
+        "Illuminate\\Support\\Facades\\Facade",
+        "Illuminate\\Support\\Traits\\Macroable"
+    ]
+}
